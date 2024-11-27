@@ -45,4 +45,20 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+    implementation(project.dependencies.platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
+    implementation(libs.koin.compose.viewmodel)
+    implementation(libs.koin.compose.viewmodel.navigation)
+    implementation(libs.koin.android)
+    // Koin Test features
+    testImplementation(libs.koin.test)
+    // Koin for JUnit 4
+    testImplementation(libs.koin.test.junit4)
+    // Koin for JUnit 5
+    testImplementation(libs.koin.test.junit5)
+
+
 }
