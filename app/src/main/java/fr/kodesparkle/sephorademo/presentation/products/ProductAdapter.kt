@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import fr.kodesparkle.sephorademo.R
 import fr.kodesparkle.sephorademo.domain.model.ProductWithReviews
+import java.util.Locale
 
 class ProductAdapter(
     private val onToggleReviews: (Int) -> Unit
@@ -37,7 +38,8 @@ class ProductAdapter(
 
         fun bind(productWithReviews: ProductWithReviews) {
             productName.text = productWithReviews.product.name
-            productRating.text = productWithReviews.product.averageRating.toString() ?: "No Ratings"
+            productRating.text =
+                String.format(Locale.getDefault(), "%.2f", productWithReviews.averageRating)
             reviewsLayout.removeAllViews()
 
             if (productWithReviews.isExpanded) {
@@ -45,13 +47,16 @@ class ProductAdapter(
                 productWithReviews.reviews.forEach { review ->
                     val reviewView = LayoutInflater.from(itemView.context)
                         .inflate(R.layout.item_review, reviewsLayout, false) as TextView
-                    reviewView.text =reviewView.context.getString(R.string.rating, review.rating, review.text)
+                    reviewView.text =
+                        reviewView.context.getString(R.string.rating, review.rating, review.text)
                     reviewsLayout.addView(reviewView)
                 }
-                toggleReviewsButton.text = toggleReviewsButton.context.getString(R.string.hide_reviews)
+                toggleReviewsButton.text =
+                    toggleReviewsButton.context.getString(R.string.hide_reviews)
             } else {
                 reviewsLayout.visibility = View.GONE
-                toggleReviewsButton.text = toggleReviewsButton.context.getString(R.string.show_reviews)
+                toggleReviewsButton.text =
+                    toggleReviewsButton.context.getString(R.string.show_reviews)
             }
         }
     }

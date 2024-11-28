@@ -34,11 +34,11 @@ android {
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     buildFeatures {
@@ -75,4 +75,16 @@ dependencies {
     implementation(libs.androidx.recyclerview)
 
 
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockito.core) // For mocking the repository
+    testImplementation(libs.mockito.kotlin) // For mocking with Kotlin syntax
+    testImplementation(libs.junit.jupiter.api)
+    testImplementation(libs.junit.jupiter.engine)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlin.test)
+
+    testImplementation(libs.koin.test)  // Koin test module
+    testImplementation(libs.koin.core)
 }
