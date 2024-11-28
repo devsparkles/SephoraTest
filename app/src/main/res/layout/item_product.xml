@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+
+    <LinearLayout
+        android:id="@+id/productDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toggleReviewsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/product_name"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/productRating"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/average_rating_0_0" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/toggleReviewsButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/show_hide_reviews"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

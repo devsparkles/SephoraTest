@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SephoraDemo</string>
+    <string name="show_hide_reviews">Show/Hide</string>
+    <string name="product_name">Product Name</string>
+    <string name="average_rating_0_0">Average rating: 0.0</string>
 </resources>
