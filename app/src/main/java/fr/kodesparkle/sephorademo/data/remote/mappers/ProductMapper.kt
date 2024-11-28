@@ -28,8 +28,8 @@ fun ProductReviewsDto.toProductReview(): ProductReview {
 
 fun ReviewDto.toReview(): Review {
     return Review(
-        name = name,
-        text = text,
-        rating = rating
+        name = name?:"",
+        text = text?:"",
+        rating = rating?:0.0
     )
 }

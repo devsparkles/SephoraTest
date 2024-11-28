@@ -3,4 +3,7 @@
     <string name="show_hide_reviews">Show/Hide</string>
     <string name="product_name">Product Name</string>
     <string name="average_rating_0_0">Average rating: 0.0</string>
+    <string name="rating">Rating: %d - %s</string>
+    <string name="hide_reviews">Hide reviews</string>
+    <string name="show_reviews">Show reviews</string>
 </resources>

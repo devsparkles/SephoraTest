@@ -23,6 +23,9 @@ object HttpClientFactory {
                 json(
                     json = Json {
                         ignoreUnknownKeys = true
+                        isLenient = true
+                        coerceInputValues = true // Définit les valeurs manquantes comme leurs valeurs par défaut
+
                     }
                 )
             }
